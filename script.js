@@ -15,11 +15,38 @@
 // }
 
 //2)
-document.oncontextmenu = function (){
-  return false
-};
+// document.oncontextmenu = function (){
+//   return false
+// };
+//
+// function noSelect() {return false;}
+// document.ondragstart = noSelect;
+// document.onselectstart = noSelect;
+// document.oncontextmenu = noSelect;
 
-function noSelect() {return false;}
-document.ondragstart = noSelect;
-document.onselectstart = noSelect;
-document.oncontextmenu = noSelect;
+//3)
+var timeId;
+function showTime() {
+  let time = new Date()
+  let hour = time.getHours();
+  let min = time.getMinutes();
+  let sec = time.getSeconds();
+  document.getElementById('hour').textContent = hour.toString();
+  document.getElementById('minute').textContent = min.toString();
+  document.getElementById('second').textContent = sec.toString();
+}
+
+document.getElementById('startBtn').addEventListener('click', function () {
+  if (!timeId) {
+    timeId = setInterval(showTime, 1000);
+  }
+  showTime();
+});
+
+document.getElementById('stopBtn').addEventListener('click', function () {
+  clearInterval(timeId);
+  timeId = null;
+  document.getElementById('hour').textContent = 'hh';
+  document.getElementById('minute').textContent = 'min';
+  document.getElementById('second').textContent = 'sec';
+});

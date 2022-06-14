@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 3 - Timer</title>
+    <style>
+        html, * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .timer-wrap {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .timer-time {
+            margin-bottom: 15px;
+        }
+        .timer-time span {
+            font-size: 19px;
+        }
+        #hour {
+            color: red;
+        }
+        #minute {
+            color: darkgreen;
+        }
+        #second {
+            color: blue;
+        }
+        .timer-btn {
+            width: 120px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .timer-btn button {
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="timer-wrap">
+    <div class="timer-time">
+        <span id="hour">hh</span>
+        <span>:</span>
+        <span id="minute">min</span>
+        <span>:</span>
+        <span id="second">sec</span>
+    </div>
+    <div class="timer-btn">
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
